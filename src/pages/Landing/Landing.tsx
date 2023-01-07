@@ -55,15 +55,14 @@ export default function Landing(props: Props) {
         case 1 : return <InboxIcon />
         case 2 : return <InboxIcon/>
         case 3 : return <InboxIcon />
-        case 4 : 
-        return<InboxIcon />
+        case 4 : return<InboxIcon />
 
     }
   }
   const drawer = (
     <div >
       <Toolbar >
-        Mohamed Ahmed Fathelbab
+        Welcome to my website
         </Toolbar>
       <Divider />
       <List>
