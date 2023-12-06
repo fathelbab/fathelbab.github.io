@@ -1,0 +1,158 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Font and Text Styling */
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+  }
+  
+  /* Container */
+  .landing-page {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  /* Profile Section */
+  .profile-section {
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+  }
+  
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #333;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5); /* Shadow for elevation effect */
+
+  }
+  
+  /* About Me Section */
+  .about-me {
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.3s;
+  }
+  
+  /* Skills Section */
+  .skills {
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.6s;
+    font-family: 'Roboto', sans-serif; /* Roboto font */
+
+  }
+  
+  .skills ul {
+    list-style: none;
+  }
+  
+  .skills li {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 20px;
+    background-image: linear-gradient(to right, #ff7e5f, #feb47b); /* Linear gradient */
+    animation: breathing 2s ease-in-out infinite; /* Breathing animation */
+  }
+  
+  /* Breathing Animation Keyframes */
+  @keyframes breathing {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+  
+  /* Fade In Animation */
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Portfolio Section */
+  .portfolio {
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.9s;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100%; /* Adjust height as needed */
+    width: 100%; /* Adjust width as needed */
+  }
+
+  /* Contact Me Section */
+  .contact {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #f2f2f2; /* Light grey background */
+    text-align: center;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 1.2s;
+}
+
+.contact h2 {
+    margin-bottom: 20px;
+}
+
+.contact ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact li {
+    margin-bottom: 10px;
+}
+
+.contact a {
+    color: #0066cc; /* Blue color for links */
+    text-decoration: none; /* No underline */
+}
+
+.contact a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+  
+  /* Fade In Animation */
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Media Queries for Responsive Design */
+  @media (min-width: 600px) {
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .landing-page {
+      max-width: 750px;
+      margin: auto;
+    }
+  
+    .skills li {
+      margin: 15px;
+      padding: 15px;
+    }
+  }
+  

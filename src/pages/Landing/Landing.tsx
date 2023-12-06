@@ -1,190 +1,137 @@
+import React, {useState} from 'react';
+import './LandingPage.css';
+import ImageList from '@mui/material/ImageList';
+import ImageListItem from '@mui/material/ImageListItem';
+const LandingPage = () => {
+  const [itemData, setItemData] = useState([
+    {
+      img: '1.webp',
+      title: '1',
+    },
+    {
+      img: '2.webp',
+      title: '2',
+    },
+    {
+      img: '3.webp',
+      title: '3',
+    },
+    {
+      img: '4.webp',
+      title: '4',
+    },
+    {
+      img: '5.webp',
+      title: '5',
+    },
+    {
+      img: '6.webp',
+      title: '6',
+    },
+    {
+      img: '7.webp',
+      title: '7',
+    },
+    {
+      img: '8.webp',
+      title: '8',
+    },
+    {
+      img: '9.webp',
+      title: '9',
+    },
+    {
+      img: '10.webp',
+      title: '10',
+    },
+    {
+      img: '11.webp',
+      title: '11',
+    },
+    {
+      img: '12.webp',
+      title: '12',
+    },
+    {
+      img: '13.webp',
+      title: '13',
+    },
+  ]);
+  return (
+    <div className="landing-page">
+      <section className="profile-section">
+        <img src="Photo.JPG" alt="Profile" className="profile-pic" />
+        <h1>Mohamed Ahmed Fathelbab</h1>
+        <p>Software Engineer (7+ Years) 🥸</p>
+      </section>
 
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-// import * as Icon from '@mui/icons-material';
-// import Icon from '@mui/material/Icon';
+      <section className="about-me">
+        <h2>About Me  🧐</h2>
+        <p>Hello  🤗 , My name is Mohamed I am <b>Software Engineer with 7+ years</b> of professional experience. My key roles in developing innovative solutions for various domains. I have contributed significantly to a wellness diet management app and a QR ordering system for restaurants, demonstrating skills in <b>Elixir, Rails, React.js, React Native, and Ruby.</b> Mohamed's achievements include <b>designing reusable components, integrating payment gateways, and optimizing Websites, mobile applications, Backend apps </b>for superior performance. My expertise extends to access control systems, where <b>I managed databases, developed APIs, and ensured security for over 10,000 users.</b> <b>I translates designs into high-quality code, creates intuitive user interfaces, and implements efficient, testable, and reusable code.</b> My commitment to excellence is reflected in my ability to troubleshoot systems, define requirements, and support operational teams.</p>
+      </section>
 
-import MenuIcon from '@mui/icons-material/Menu';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
+      <section className="skills">
+        <h2>Skills (but not limited to) 🤓</h2>
+        <ul>
+  <li>JavaScript</li>
+  <li>TypeScript</li>
+  <li>Elixir</li>
+  <li>Erlang</li>
+  <li>Phoenix</li>
+  <li>Ruby</li>
+  <li>Rails</li>
+  <li>ES6</li>
+  <li>Git</li>
+  <li>GitHub</li>
+  <li>Jira</li>
+  <li>Trello</li>
+  <li>Android Studio</li>
+  <li>Xcode</li>
+  <li>Material UI React</li>
+  <li>PostgreSQL</li>
+  <li>MySQL</li>
+  <li>Kafka</li>
+  <li>Kubernetes</li>
+  <li>Project Management</li>
+  <li>AWS</li>
+  <li>React</li>
+  <li>React-Native</li>
+  <li>Redux</li>
+  <li>Node</li>
+  <li>HTML</li>
+  <li>CSS</li>
+        </ul>
+      </section>
 
-const drawerWidth = 240;
+      <section className="portfolio">
+        <h2>Portfolio  😎</h2>
+        <ImageList sx={{ width: 700, height: 650 }} variant="woven" cols={3} gap={8}>
+  {itemData.map((item) => (
+    <ImageListItem key={item.img}>
+      <img
+        srcSet={`${item.img}?w=161&fit=crop&auto=format&dpr=2 2x`}
+        src={`${item.img}?w=161&fit=crop&auto=format`}
+        alt={item.title}
+        loading="lazy"
+      />
+    </ImageListItem>
+  ))}
+</ImageList>
+      </section>
 
-interface Props {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window?: () => Window;
-}
-
-export default function Landing(props: Props) {
-  const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
-  const sideDrawerItems = [{
-    name: 'About me',
-    key: 1,
-  },{
-    name: 'Portfolio',
-    key: 2,
-  },{
-    name: 'Skills',
-    key: 3,
-  },{
-    name: 'Contact me',
-    key: 4,
-  }]
-
-  const renderIcon = (id : number) => {
-    switch (id) {
-        case 1 : return <InboxIcon />
-        case 2 : return <InboxIcon/>
-        case 3 : return <InboxIcon />
-        case 4 : return<InboxIcon />
-
-    }
-  }
-  const drawer = (
-    <div >
-      <Toolbar >
-        Welcome to my website
-        </Toolbar>
-      <Divider />
-      <List>
-        {sideDrawerItems.map((text, index) => (
-          <ListItem key={text.key} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {renderIcon(text.key)}
-              </ListItemIcon>
-              <ListItemText primary={text.name} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      {/* <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List> */}
+      <section className="contact">
+        <h2>Contact Me  🥹</h2>
+        <form>
+        <ul>
+    <li>Phone: +201011377755</li>
+    <li>LinkedIn: <a href="https://www.linkedin.com/in/mohamed-ahmed-fathelbab-30001a103/" target="_blank">My Linkedin</a></li>
+    <li>GitHub: <a href="https://github.com/fathelbab" target="_blank">My Github</a></li>
+    <li>Email: <a href="mailto:fathelbabmohamed94@gmail.com">fathelbabmohamed94@gmail.com</a></li>
+  </ul>
+        </form>
+      </section>
     </div>
   );
+};
 
-  const container = window !== undefined ? () => window().document.body : undefined;
-
-  return (
-    <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
-      <AppBar
-        position="fixed"
-        sx={{
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
-          ml: { sm: `${drawerWidth}px` },
-        }}
-      >
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Mohamed Ahmed Fathelbab
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Box
-        component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-        aria-label="mailbox folders"
-      >
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-        <Drawer
-          container={container}
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-          }}
-        >
-          {drawer}
-        </Drawer>
-        <Drawer
-          variant="permanent"
-          sx={{
-            display: { xs: 'none', sm: 'block' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-          }}
-          open
-        >
-          {drawer}
-        </Drawer>
-      </Box>
-      <Box
-        component="main"
-        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
-      >
-        <Toolbar />
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
-          enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
-          imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus.
-          Convallis convallis tellus id interdum velit laoreet id donec ultrices.
-          Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-          adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra
-          nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum
-          leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis
-          feugiat vivamus at augue. At augue eget arcu dictum varius duis at
-          consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
-          sapien faucibus et molestie ac.
-        </Typography>
-        <Typography paragraph>
-          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper
-          eget nulla facilisi etiam dignissim diam. Pulvinar elementum integer enim
-          neque volutpat ac tincidunt. Ornare suspendisse sed nisi lacus sed viverra
-          tellus. Purus sit amet volutpat consequat mauris. Elementum eu facilisis
-          sed odio morbi. Euismod lacinia at quis risus sed vulputate odio. Morbi
-          tincidunt ornare massa eget egestas purus viverra accumsan in. In hendrerit
-          gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem
-          et tortor. Habitant morbi tristique senectus et. Adipiscing elit duis
-          tristique sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
-          eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
-          posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>
-      </Box>
-    </Box>
-  );
-}
+export default LandingPage;
