@@ -196,7 +196,7 @@ const workExperiences = {
     {
       role: "Software Engineer",
       company: "Kamelizer",
-      companylogo: require("./assets/images/kamelizerLogo.png"),
+      companylogo: require("./assets/images/kamelizer.png"),
       date: "December 2022 – Present",
       desc: "Lead the development of cross-platform mobile applications. Successfully launched \"Bufflo Burger\" app (food delivery app), resulting in a 70% increase in online orders.",
       descBullets: [
