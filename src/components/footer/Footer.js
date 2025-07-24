@@ -12,7 +12,7 @@ export default function Footer() {
         <p className={isDark ? "dark-mode footer-text" : "footer-text"}>
           {emoji("Made with ❤️ by Fath Elbab")}
         </p>
-        <p className={isDark ? "dark-mode footer-text" : "footer-text"}>
+        {/* <p className={isDark ? "dark-mode footer-text" : "footer-text"}>
           Theme by{" "}
           <a
             href="https://github.com/fathelbab"
@@ -21,7 +21,7 @@ export default function Footer() {
           >
             Fathelbab
           </a>
-        </p>
+        </p> */}
       </div>
     </Fade>
   );
